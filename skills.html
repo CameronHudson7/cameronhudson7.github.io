@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skills | Cameron Hudson</title>
+  <meta name="description" content="Skills of Cameron Hudson.">
+  <meta name="theme-color" content="#071226">
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="bracket">&gt;</span> Cameron Hudson</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+            <li><a href="projects.html"><span class="num">01</span>Projects</a></li>
+            <li><a href="skills.html" aria-current="page"><span class="num">02</span>Skills</a></li>
+            <li><a href="contact.html"><span class="num">03</span>Contact Me</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-cv" href="assets/Cameron_Hudson_CV.pdf" download><span class="cv-word">Download </span>CV <span aria-hidden="true">&darr;</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head" aria-labelledby="page-title">
+      <div class="container">
+        <p class="label">02 / Skills</p>
+        <h1 id="page-title">Skills</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="skill-group">
+          <h2 class="subhead">Technical skills</h2>
+          <div class="examples examples-two">
+          <article class="panel example rise">
+            <h3>Software Engineering</h3>
+            <p>In my Advanced Higher Computing project, I had to build a software from scratch, following all the steps such as analysis, documentation, implementation etc.</p>
+            <p class="evidence"><a href="assets/GuessTheCeleb_Report.pdf" target="_blank" rel="noopener">Read the project report (PDF) <span aria-hidden="true">&nearr;</span></a></p>
+          </article>
+          <article class="panel example rise">
+            <h3>Games Development</h3>
+            <p>I have experience creating games in Unity and Scratch and designing and producing a full game in Construct 3 as part of the NPA Computer Games Development course.</p>
+            <p class="evidence"><a href="https://www.construct.net/en/free-online-games/total-football-2d-59532/play" target="_blank" rel="noopener">Play my Construct 3 game <span aria-hidden="true">&nearr;</span></a></p>
+          </article>
+          <article class="panel example wide rise">
+            <h3>Data Structures</h3>
+            <p>Used a hash table in my 2nd year university project to store registered users and to be able to add new ones to the hash table.</p>
+            <figure class="code-sample">
+              <figcaption>
+                <span class="file">register_user()</span>
+                <span class="from">Login System Hash Table &middot; C</span>
+              </figcaption>
+              <pre><code><span class="tk-kw">int</span> register_user(HashTable *ht, <span class="tk-kw">int</span> user_id, <span class="tk-kw">char</span> password[])
+{
+    <span class="tk-cmt">// check that user ID is not negative and that the password is not empty</span>
+    <span class="tk-kw">if</span> (user_id &lt; <span class="tk-num">0</span> || password == <span class="tk-kw">NULL</span>)
+    {
+        <span class="tk-cmt">// return error for error</span>
+        <span class="tk-kw">return</span> ERROR;
+    }
+    <span class="tk-cmt">// call function to get the bucket where the user id is</span>
+    <span class="tk-kw">int</span> index = get_bucket_for_user(user_id);
+    <span class="tk-cmt">// check for negative index</span>
+    <span class="tk-kw">if</span> (index == -<span class="tk-num">1</span>) {
+        <span class="tk-kw">return</span> ERROR;
+    }
+    <span class="tk-cmt">// call function to find the correct user in the bucket</span>
+    User *existing_user = find_user(ht, user_id);
+    <span class="tk-cmt">// if the user already exists</span>
+    <span class="tk-kw">if</span> (existing_user != <span class="tk-kw">NULL</span>) {
+        <span class="tk-cmt">// update the password for the existing user</span>
+        strncpy(existing_user-&gt;password, password, MAX_PASSWORD_LEN);
+        <span class="tk-cmt">// end the string</span>
+        existing_user-&gt;password[MAX_PASSWORD_LEN] = <span class="tk-str">'\0'</span>;
+        <span class="tk-cmt">// return success for update successfull</span>
+        <span class="tk-kw">return</span> SUCCESS;
+    }
+
+    <span class="tk-cmt">// allocate enough memory for the new user</span>
+    User *new_user = malloc(<span class="tk-kw">sizeof</span>(User));
+    <span class="tk-cmt">// check for empty new user ID</span>
+    <span class="tk-kw">if</span> (new_user == <span class="tk-kw">NULL</span>) {
+        <span class="tk-kw">return</span> ERROR;
+    }
+    <span class="tk-cmt">// set the new user ID and password</span>
+    new_user-&gt;user_id = user_id;
+    strncpy(new_user-&gt;password, password, MAX_PASSWORD_LEN);
+    <span class="tk-cmt">// end the string</span>
+    new_user-&gt;password[MAX_PASSWORD_LEN] = <span class="tk-str">'\0'</span>;
+    <span class="tk-cmt">// set the next pointer of the new user</span>
+    new_user-&gt;next = ht-&gt;buckets[index];
+    <span class="tk-cmt">// set the new user as the head of the bucket</span>
+    ht-&gt;buckets[index] = new_user;
+    <span class="tk-cmt">// return success for new user added</span>
+    <span class="tk-kw">return</span> SUCCESS;
+}</code></pre>
+            </figure>
+          </article>
+          <article class="panel example wide rise">
+            <h3>Algorithms</h3>
+            <p>Used a bubble sort in my GuessTheCeleb (AH Computing) Project to calculate a leaderboard for the users with the highest scores.</p>
+            <figure class="code-sample">
+              <figcaption>
+                <span class="file">globalLeaderboard()</span>
+                <span class="from">GuessTheCeleb &middot; Python</span>
+              </figcaption>
+              <pre><code><span class="tk-cmt"># Function to display the global leaderboard</span>
+<span class="tk-kw">def</span> globalLeaderboard(fernet, key):
+    scores = []  <span class="tk-cmt"># Declare blank array to store usernames and scores</span>
+    decryptFile(fernet,key)  <span class="tk-cmt"># Decrypt the accounts file to read the user information</span>
+    <span class="tk-kw">with</span> <span class="tk-kw">open</span>(<span class="tk-str">"accounts.txt"</span>, <span class="tk-str">"r"</span>, encoding=<span class="tk-str">"utf-8"</span>) <span class="tk-kw">as</span> file: <span class="tk-cmt"># Open accounts file</span>
+        <span class="tk-kw">for</span> line <span class="tk-kw">in</span> file: <span class="tk-cmt"># For each line in the accounts file</span>
+            username, password, highScore = line.strip().split(<span class="tk-str">","</span>) <span class="tk-cmt"># Split file into the 3 pieces of information</span>
+            scores.append((username, <span class="tk-kw">int</span>(highScore)))  <span class="tk-cmt"># Append username and score to scores array</span>
+    encryptFile(fernet)  <span class="tk-cmt"># Re-encrypt the file after reading</span>
+    n = <span class="tk-kw">len</span>(scores) <span class="tk-cmt"># Declare n as the number of scores in the array</span>
+    <span class="tk-cmt"># Bubble sort to rank users by highest scores (descending order)</span>
+    <span class="tk-kw">for</span> i <span class="tk-kw">in</span> <span class="tk-kw">range</span>(n-<span class="tk-num">1</span>): <span class="tk-cmt"># Start fixed loop</span>
+        <span class="tk-kw">for</span> j <span class="tk-kw">in</span> <span class="tk-kw">range</span>(n-i-<span class="tk-num">1</span>): <span class="tk-cmt"># Start second fixed loop</span>
+            <span class="tk-kw">if</span> scores[j][<span class="tk-num">1</span>] &lt; scores[j+<span class="tk-num">1</span>][<span class="tk-num">1</span>]: <span class="tk-cmt"># If chosen score is less than the score behind it</span>
+                scores[j], scores[j+<span class="tk-num">1</span>] = scores[j+<span class="tk-num">1</span>], scores[j] <span class="tk-cmt"># Move chosen score behind other score</span>
+    <span class="tk-kw">try</span>:
+        <span class="tk-cmt"># Display the top 10 scores</span>
+        <span class="tk-kw">for</span> i <span class="tk-kw">in</span> <span class="tk-kw">range</span>(<span class="tk-num">0</span>, <span class="tk-num">10</span>):
+            <span class="tk-kw">print</span>(<span class="tk-kw">str</span>(i + <span class="tk-num">1</span>) + <span class="tk-str">"."</span>, (scores[i][<span class="tk-num">0</span>]), <span class="tk-str">"("</span> + <span class="tk-kw">str</span>(scores[i][<span class="tk-num">1</span>]) + <span class="tk-str">")"</span>)
+    <span class="tk-kw">except</span> IndexError: <span class="tk-cmt"># If there is less than 10 scores in scores array</span>
+        <span class="tk-kw">None</span> <span class="tk-cmt"># Do nothing (it was giving me an error when there was less than 10 scores in the array, so by doing nothing it simple prints as many as it can, up to 10)</span></code></pre>
+            </figure>
+          </article>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h2 class="subhead">Transferable skills</h2>
+          <div class="examples">
+          <article class="panel example rise">
+            <h3>Teamwork</h3>
+            <p>I have played football for the Falkirk Foundation for more than 12 years, and then the University of Dundee team, where I have developed strong friendships and learned the importance of teamwork while building my inter-personal and communication skills.</p>
+          </article>
+          <article class="panel example rise">
+            <h3>Communication</h3>
+            <p>I was involved with computing activities in school, joining the Digital Leaders Club, helping staff and younger pupils learn how they could use their school iPads to improve their learning experience.</p>
+          </article>
+          <article class="panel example rise">
+            <h3>Working under pressure &amp; time management</h3>
+            <p>Working as a Store Colleague at Tesco, where I help customers, replenish stock and keep the shop floor tidy and well presented. Working in a busy store has further developed my teamwork, communication and time management skills, and I have learned to stay calm and organised under pressure.</p>
+          </article>
+          <article class="panel example rise">
+            <h3>Leadership</h3>
+            <p>Volunteered for 3 months at the Junior Academy programme hosted by the Falkirk Foundation. I helped with beginner football sessions for children aged 4 to 12. I had the opportunity to lead drills, which I found helpful with my confidence and organisation skills as a leader.</p>
+          </article>
+          <article class="panel example rise">
+            <h3>Problem solving</h3>
+            <p>I developed my problem-solving skills during my volunteering with the school radio station &lsquo;Braes Beats&rsquo;, regularly having to identify and fix issues with the equipment, and applying my strong problem solving and mathematical skills when I competed in the Scottish Mathematical Challenge achieving the gold certificate.</p>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Cameron Hudson</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/CameronHudson7" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/cameron-hudson-766504413/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:camhud07@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
