@@ -421,3 +421,6 @@ details.code-sample .toggle {
 details.code-sample .toggle::before { content: "Show code \25BE"; }
 details.code-sample[open] .toggle::before { content: "Hide code \25B4"; }
 details.code-sample[open] summary { border-bottom: 1px solid var(--line); }
+
+/* Footer: single centred acknowledgement */
+.site-footer .footer-inner { justify-content: center; text-align: center; }
