@@ -397,3 +397,27 @@ a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 .dev-skills li > div { display: flex; flex-direction: column; gap: 0.3rem; }
 .dev-skills .dev-title { font-family: var(--display); font-size: 1.25rem; font-weight: 500; color: var(--white); }
 .dev-skills .dev-desc { font-family: var(--body); font-size: 1rem; font-weight: 400; color: var(--muted); }
+
+/* Languages in Software Engineering card */
+.langs { margin: 1.25rem 0 0; display: grid; gap: 0.9rem; }
+.langs dt { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.45rem; }
+.langs dd { margin: 0; }
+
+/* Collapsible code samples */
+details.code-sample summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.85rem 1.1rem; background: rgba(255,255,255,0.03);
+  transition: background 0.2s;
+}
+details.code-sample summary::-webkit-details-marker { display: none; }
+details.code-sample summary:hover { background: rgba(92, 214, 255, 0.08); }
+details.code-sample summary .cap { display: flex; flex-direction: column; gap: 0.2rem; }
+details.code-sample .toggle {
+  flex-shrink: 0; font-family: var(--mono); font-size: 0.8rem; color: var(--cyan);
+  border: 1px solid var(--cyan-line); background: var(--cyan-soft);
+  padding: 0.4rem 0.75rem; border-radius: 6px; white-space: nowrap;
+}
+details.code-sample .toggle::before { content: "Show code \25BE"; }
+details.code-sample[open] .toggle::before { content: "Hide code \25B4"; }
+details.code-sample[open] summary { border-bottom: 1px solid var(--line); }

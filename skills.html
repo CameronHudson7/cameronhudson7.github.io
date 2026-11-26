@@ -43,7 +43,11 @@
           <div class="examples examples-two">
           <article class="panel example rise">
             <h3>Software Engineering</h3>
-            <p>In my Advanced Higher Computing project, I had to build a software from scratch, following all the steps such as analysis, documentation, implementation etc.</p>
+            <p>As part of my Advanced Higher Computing project, I built a Celebrity Guessing Game, following all the necessary steps such as analysis, documentation and implementation.</p>
+            <dl class="langs">
+              <div><dt>Experience with</dt><dd><ul class="tags"><li>Python</li><li>HTML</li><li>CSS</li><li>Java</li><li>SQL</li></ul></dd></div>
+              <div><dt>Currently learning</dt><dd><ul class="tags"><li>C</li><li>C++</li></ul></dd></div>
+            </dl>
             <p class="evidence"><a href="assets/GuessTheCeleb_Report.pdf" target="_blank" rel="noopener">Read the project report (PDF) <span aria-hidden="true">&nearr;</span></a></p>
           </article>
           <article class="panel example rise">
@@ -54,11 +58,14 @@
           <article class="panel example wide rise">
             <h3>Data Structures</h3>
             <p>A hash table was used in my 2nd year university project to store registered users and to be able to add new ones to the hash table.</p>
-            <figure class="code-sample">
-              <figcaption>
-                <span class="file">register_user()</span>
-                <span class="from">Login System Hash Table &middot; C</span>
-              </figcaption>
+            <details class="code-sample">
+              <summary>
+                <span class="cap">
+                  <span class="file">register_user()</span>
+                  <span class="from">Login System Hash Table &middot; C</span>
+                </span>
+                <span class="toggle" aria-hidden="true"></span>
+              </summary>
               <pre><code><span class="tk-kw">int</span> register_user(HashTable *ht, <span class="tk-kw">int</span> user_id, <span class="tk-kw">char</span> password[])
 {
     <span class="tk-cmt">// check that user ID is not negative and that the password is not empty</span>
@@ -103,16 +110,19 @@
     <span class="tk-cmt">// return success for new user added</span>
     <span class="tk-kw">return</span> SUCCESS;
 }</code></pre>
-            </figure>
+            </details>
           </article>
           <article class="panel example wide rise">
             <h3>Algorithms</h3>
             <p>Used a bubble sort in my GuessTheCeleb (AH Computing) Project to calculate a leaderboard for the users with the highest scores.</p>
-            <figure class="code-sample">
-              <figcaption>
-                <span class="file">globalLeaderboard()</span>
-                <span class="from">GuessTheCeleb &middot; Python</span>
-              </figcaption>
+            <details class="code-sample">
+              <summary>
+                <span class="cap">
+                  <span class="file">globalLeaderboard()</span>
+                  <span class="from">GuessTheCeleb &middot; Python</span>
+                </span>
+                <span class="toggle" aria-hidden="true"></span>
+              </summary>
               <pre><code><span class="tk-cmt"># Function to display the global leaderboard</span>
 <span class="tk-kw">def</span> globalLeaderboard(fernet, key):
     scores = []  <span class="tk-cmt"># Declare blank array to store usernames and scores</span>
@@ -133,8 +143,8 @@
         <span class="tk-kw">for</span> i <span class="tk-kw">in</span> <span class="tk-kw">range</span>(<span class="tk-num">0</span>, <span class="tk-num">10</span>):
             <span class="tk-kw">print</span>(<span class="tk-kw">str</span>(i + <span class="tk-num">1</span>) + <span class="tk-str">"."</span>, (scores[i][<span class="tk-num">0</span>]), <span class="tk-str">"("</span> + <span class="tk-kw">str</span>(scores[i][<span class="tk-num">1</span>]) + <span class="tk-str">")"</span>)
     <span class="tk-kw">except</span> IndexError: <span class="tk-cmt"># If there is less than 10 scores in scores array</span>
-        <span class="tk-kw">None</span> <span class="tk-cmt"># Do nothing (it was giving me an error when there was less than 10 scores in the array, so by doing nothing it simple prints as many as it can, up to 10)</span></code></pre>
-            </figure>
+        <span class="tk-kw">None</span></code></pre>
+            </details>
           </article>
           </div>
         </div>
@@ -144,7 +154,7 @@
           <div class="examples">
           <article class="panel example rise">
             <h3>Teamwork</h3>
-            <p>I have played football for the Falkirk Foundation for more than 12 years, and then the University of Dundee team, where I have developed strong friendships and learned the importance of teamwork while building my inter-personal and communication skills.</p>
+            <p>I have played football for the Falkirk Foundation for more than 12 years, and then the University of Dundee team, where I have developed strong friendships and learned the importance of teamwork while building my inter-personal and communication skills. As well as this, working in a colleague team at Tesco has helped me build my teamwork skills in a more professional environment.</p>
           </article>
           <article class="panel example rise">
             <h3>Communication</h3>
@@ -152,7 +162,7 @@
           </article>
           <article class="panel example rise">
             <h3>Working under pressure &amp; time management/Multi-Tasking</h3>
-            <p>I am working as a Store Colleague at Tesco, where I help customers, replenish stock and keep the shop floor tidy and well presented. Working in a busy store has further developed my teamwork, communication and time management skills, and I have learned to stay calm and organised under pressure, as I am answering queries from customers whilst ensuring the stock allocation is put out on the shelf in a timely manner.</p>
+            <p>I am working as a Store Colleague at Tesco, where I help customers, replenish stock and keep the shop floor tidy and well presented. Working in a busy store has further developed my communication and time management skills, and I have learned to stay calm and organised under pressure, as I am answering queries from customers whilst ensuring the stock allocation is put out on the shelf in a timely manner.</p>
           </article>
           <article class="panel example rise">
             <h3>Leadership</h3>
